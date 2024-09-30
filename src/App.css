@@ -1,0 +1,14 @@
+body{
+  background-color: #f6f8fd;
+}
+
+.side-links .nav:active,
+.side-links .nav.active {
+  background: #c2e7fb;
+}
+
+.side-links .icon .active {
+  background: gray;
+}
+
+

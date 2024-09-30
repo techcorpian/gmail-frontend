@@ -1,0 +1,23 @@
+@tailwind base; 
+@tailwind components; 
+@tailwind utilities;
+
+.star-checkbox {
+    display: flex;
+  }
+  
+  .star-checkbox input[type="checkbox"] {
+    display: none;
+  }
+  
+  .star-checkbox label {
+    font-size: 1.3rem; /* Adjust the size of the star */
+    color: #ccc; /* Star color when not checked */
+    cursor: pointer;
+    
+  }
+  
+  .star-checkbox input[type="checkbox"]:checked + label {
+    color: gold; /* Star color when checked */
+  }
+  
