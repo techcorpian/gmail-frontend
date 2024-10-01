@@ -14,7 +14,8 @@ const RegisterStep3 = () => {
 
     const handleFinish = async () => { // Added async keyword here
         try {
-            const res = await axios.post('http://localhost:5000/auth/register', {
+            const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
+            const res = await axios.post(`${apiUrl}/auth/register`, {
                 firstname,
                 lastname,
                 gender,
