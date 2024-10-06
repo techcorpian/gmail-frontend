@@ -38,11 +38,18 @@ const ComposePopup = ({ compose, setCompose }) => {
     const handleKeyDown = (e) => {
         if (e.key === 'Enter') {
             e.preventDefault(); // Prevent form submission or page reload
-
-            if (toAddress.trim() !== '') {
-                setAddressArr([...addressArr, toAddress]); // Add value to the array
-                setToAddress(''); // Clear the input field
-            }
+            addAddressToArray();
+        }
+    };
+    
+    const handleBlur = () => {
+        addAddressToArray();
+    };
+    
+    const addAddressToArray = () => {
+        if (toAddress.trim() !== '') {
+            setAddressArr([...addressArr, toAddress]); // Add value to the array
+            setToAddress(''); // Clear the input field
         }
     };
 
@@ -173,7 +180,7 @@ const ComposePopup = ({ compose, setCompose }) => {
                                 </div>
                             ))
                         }
-                        <input type="text" value={toAddress} className="focus:outline-none w-full" onChange={(e) => setToAddress(e.target.value)} onKeyDown={handleKeyDown} />
+                        <input type="text" value={toAddress} className="focus:outline-none w-full" onChange={(e) => setToAddress(e.target.value)} onKeyDown={handleKeyDown} onBlur={handleBlur}/>
                     </div>
                     <hr />
                     <div className="flex py-2 px-5 gap-2 text-sm items-center">
