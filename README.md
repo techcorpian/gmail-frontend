@@ -17,11 +17,7 @@ npm run dev
 
 4. The Backend (Node JS) Source code can be found in https://github.com/techcorpian/gmail-backend.git
 
-# Features of this application
-
-Here’s a refined version of your description:
-
----
+# Features of this application:
 
 1. **Compose Button/Popup:**
    * Click the "Compose" button to open a popup for composing emails.
