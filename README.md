@@ -31,8 +31,6 @@ npm run dev
    * Inbox displays a list of received emails.
    * Search function allows you to find emails using keywords.
    * Emails can be archived, snoozed, or deleted.
-   * Snoozing an email moves it to the Snooze menu.
-   * Deleting an email moves it to the Trash menu.
    * Click on an email to view its detailed content.
 
 3. **Sent:**
@@ -40,9 +38,11 @@ npm run dev
    * Sent emails are listed in the "Sent" menu.
    * Search function allows you to find sent emails using keywords.
    * Sent emails can be archived, snoozed, or deleted.
-   * Snoozing an email moves it to the Snooze menu.
-   * Deleting an email moves it to the Trash menu.
    * Click on a sent email to view its detailed content.
+
+4. **Snoozing an email moves it to the Snooze menu.**
+
+5. **Deleting an email moves it to the Trash menu.**
 
 4. **Pagination:**
    * **List View** - Displays up to 1,000 emails per page, with navigation options at the top right to move between pages.
