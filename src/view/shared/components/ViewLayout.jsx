@@ -48,7 +48,7 @@ const ViewLayout = ({ emailView, backLink, tag}) => {
     };
     return (
         <div
-            className={`flex flex-col h-full ${isManualOpen ? "ml-0" : "ml-20"
+            className={`flex flex-col h-full ${isManualOpen ? "ml-0" : "md:ml-20"
                 }`}
         >
             {currentEmails.length > 0 ? (
@@ -111,7 +111,7 @@ const ViewLayout = ({ emailView, backLink, tag}) => {
 
                         <div className="flex items-center justify-between">
                             <div className="flex items-center gap-5">
-                                <div className="text-2xl px-3 py-2 rounded-full bg-gray-800 text-white">M</div>
+                                <div className="text-2xl p-3 px-5 rounded-full bg-gray-800 text-white">{data.fromAddress.charAt(0).toUpperCase()}</div>
                                 <div>
                                     <div className="font-semibold">{data.title} <span className="text-gray-500 font-light text-sm">{data.fromAddress}</span></div>
                                     <div className="text-sm text-gray-500 font-light">to {data.toAddress}</div>
