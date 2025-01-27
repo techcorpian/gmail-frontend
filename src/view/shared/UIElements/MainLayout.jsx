@@ -16,11 +16,13 @@ const MainLayout = () => {
     <div className="h-screen flex flex-col overflow-hidden pb-4">
       <TopMenu onSearch={handleSearch} />
       <div className="flex h-full overflow-hidden">
-        <SideDrawer />
+          <SideDrawer />
         <div className="flex-grow overflow-auto">
-        <Outlet context={{ searchQuery }} />
+          <Outlet context={{ searchQuery }} />
         </div>
-        <RightMenu />
+        <div className='md:block hidden'>
+          <RightMenu />
+        </div>
       </div>
     </div>
   );

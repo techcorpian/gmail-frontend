@@ -98,9 +98,9 @@ const Table = ({ emails, setEmails, Draft, fetchEmails, deleteMail, archiveMail,
     };
 
     return (
-        <div className={`flex flex-col ${isManualOpen ? "ml-0" : "ml-20"}`}>
-            <div className="bg-white rounded-3xl">
-                <div className="flex justify-between px-4 sticky top-0 bg-white rounded-t-3xl z-10 w-full py-4">
+        <div className={`flex flex-col ${isManualOpen ? "ml-0" : "md:ml-20"}`}>
+            <div className="bg-white md:rounded-3xl">
+                <div className="flex justify-between px-4 sticky top-0 bg-white md:rounded-t-3xl z-10 w-full py-4">
                     <div className="flex gap-4 text-lg items-center">
                         <div className="flex gap-1">
                             <input
@@ -144,21 +144,21 @@ const Table = ({ emails, setEmails, Draft, fetchEmails, deleteMail, archiveMail,
                     <table className="w-full ">
                         <tbody>
                             {currentEmails.map((email, index) => (
-                                <tr
-                                    className="relative border-b border-gray-200 group cursor-pointer hover:border hover:border-b-2 hover:border-gray-300"
+                                <div
+                                    className="flex items-center gap-4 relative border-b border-gray-200 group cursor-pointer hover:border hover:border-b-2 hover:border-gray-300"
                                     key={index}
                                     onMouseEnter={() => setHoveredRowIndex(index)}
                                     onMouseLeave={() => setHoveredRowIndex(null)}
                                 >
-                                    <td className="text-2xl w-6 pb-2 pl-4 pr-3">
+                                    <div className="text-2xl w-6 pb-1 pl-4 pr-3">
                                         <input
                                             type="checkbox"
                                             checked={email.checked || false}
                                             onChange={() => handleCheckboxChange(index)}
                                             onClick={(e) => e.stopPropagation()} // Prevent row click when checking
                                         />
-                                    </td>
-                                    <td className="text-base w-8 py-2">
+                                    </div>
+                                    <div className="text-base w-8 py-2 hidden md:block">
                                         <div className="star-checkbox">
                                             <label
                                                 htmlFor={`star${index}`}
@@ -170,24 +170,24 @@ const Table = ({ emails, setEmails, Draft, fetchEmails, deleteMail, archiveMail,
                                                 {email.isStarred ? <MdOutlineStarPurple500 /> : <MdOutlineStarOutline />}
                                             </label>
                                         </div>
-                                    </td>
-                                    <div onClick={() => viewNavigate(email._id)} className="flex justify-between">
-                                        <div className="">
-                                            <td className="text-base pr-6 font-semibold py-2 ">
+                                    </div>
+                                    <div onClick={() => viewNavigate(email._id)} className="flex justify-between items-center w-full">
+                                        <div className="flex items-center">
+                                            <div className="text-base pr-6 font-semibold py-2 ">
                                                 {Draft ? (
                                                     <span className="text-red-500 font-normal ">{Draft}</span>
                                                 ) : (
                                                     email.title
                                                 )}
-                                            </td>
-                                            <td className={`text-base px-6 py-2 ${!email.subject ? "text-gray-400 font-light" : "font-semibold"}`}>
+                                            </div>
+                                            <div className={`text-base px-6 py-2 ${!email.subject ? "text-gray-400 font-light" : "font-semibold"}`}>
                                                 {email.subject || '(No Subject)'}
                                                 <span className="text-gray-500 font-normal"> - {email.message || '(No Description)'}</span>
-                                            </td>
+                                            </div>
                                         </div>
-                                        <td className="float-right text-sm font-semibold py-2 pr-4">{formatDate(email.date)}</td>
+                                        <div className="float-right text-sm font-semibold py-2 pr-4">{formatDate(email.date)}</div>
                                     </div>
-                                    <td className="z-20 absolute flex items-center gap-2 top-1/2 right-1 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 bg-white transition-opacity">
+                                    <div className="z-20 absolute flex items-center gap-2 top-1/2 right-1 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 bg-white transition-opacity">
                                         <div onClick={() => archiveMail(email._id)} className="text-black text-lg hover:bg-gray-200 rounded-full p-2" ><BiArchiveIn /></div>
                                         <div onClick={() => deleteMail(email._id)} className="text-black text-lg hover:bg-gray-200 rounded-full p-2" ><RiDeleteBin6Line /></div>
                                         <div className="text-black text-lg hover:bg-gray-200 rounded-full p-2" ><FiClock /></div>
@@ -195,8 +195,8 @@ const Table = ({ emails, setEmails, Draft, fetchEmails, deleteMail, archiveMail,
                                             <div className="text-black text-lg hover:bg-gray-200 rounded-full p-2"><LuMailOpen /></div>
                                             :
                                             <div className="text-black text-lg hover:bg-gray-200 rounded-full p-2"><IoMailUnreadOutline /></div>}
-                                    </td>
-                                </tr>
+                                    </div>
+                                </div>
                             ))}
                         </tbody>
                     </table>

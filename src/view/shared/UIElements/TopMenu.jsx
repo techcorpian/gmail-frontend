@@ -19,8 +19,11 @@ const TopMenu = ({ onSearch }) => {
     window.location.href = '/';
   };
 
-  const currentUser = AuthService.getCurrentUser();
-  const initial = currentUser.firstname.charAt(0).toUpperCase();
+  const currentUser = AuthService.getCurrentUser() || { firstname: "Guest", email: "guest@example.com" };
+  const initial = currentUser.firstname?.charAt(0)?.toUpperCase() || "G";
+  const firstNameFormatted = currentUser.firstname
+  ? currentUser.firstname.charAt(0).toUpperCase() + currentUser.firstname.slice(1)
+  : "Guest";
   console.log(currentUser);
 
   const [searchQuery, setSearchQuery] = useState('');
@@ -78,7 +81,7 @@ const TopMenu = ({ onSearch }) => {
                 >
                   <div className="text-5xl font-medium pb-1">{initial}</div>
                 </button>
-                <div className="text-2xl">Hi, {currentUser.firstname.charAt(0).toUpperCase() + currentUser.firstname.slice(1)}!</div>
+                <div className="text-2xl">Hi, {firstNameFormatted}!</div>
                 <button className="border border-gray-500 rounded-full text-sm p-2 px-6 text-blue-800 font-semibold">Manage Your Google Account</button>
               </div>
               <div className="flex flex-col p-1 px-6 bg-white rounded-3xl w-full">

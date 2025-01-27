@@ -7,7 +7,7 @@ const AuthLayout = ({ children, handleNext, header, content, message, button2 })
         <>
             <div className="w-full max-w-5xl p-8 bg-white rounded-3xl">
                 <GoogleLogo />
-                <div className='flex justify-between mt-3 items-start'>
+                <div className='flex md:flex-row flex-col gap-3 justify-between mt-3 items-start'>
                     <div className='flex flex-col gap-3 w-full'>
                         <div className='text-4xl'>{header}</div>
                         <div>{content}</div>
