@@ -42,7 +42,7 @@ const TopMenu = ({ onSearch }) => {
           <FiMenu />
         </button>
         <div>
-          <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r5.png" alt="" />
+          <img src="https://cdn.pixabay.com/photo/2016/01/26/17/15/gmail-1162901_1280.png" alt="" />
         </div>
         <div className="ml-6">
           <input
